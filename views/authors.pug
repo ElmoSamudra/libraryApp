@@ -1,0 +1,17 @@
+extends default
+
+block content
+
+    div.main
+        table
+            tr
+                th ID
+                th First Name
+                th Last Name
+            
+            each author in authors
+                tr
+                    td 
+                        a(href='/author-management/' + author.id) #{author.id}
+                    td #{author.first_name}
+                    td #{author.last_name}

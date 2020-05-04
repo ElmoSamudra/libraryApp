@@ -1,7 +1,17 @@
 const express = require("express");
 const bodyParser = require("body-parser");
+var cors = require('cors');
 
 const app = express();
+app.use(cors());
+
+// set the view engine
+app.set('view engine', 'pug');
+
+// test express where the static files are kept
+app.use(express.static(__dirname + '/public'));
+
+
 
 require("./models");
 
@@ -9,11 +19,13 @@ require("./models");
 // support parsing of json
 app.use(bodyParser.json());
 // support parsing of urlencoded bodies (e.g. for forms)
-app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.urlencoded({ extended: false  }));
 
 // GET home page
 app.get("/", (req, res) => {
-  res.send("<H1>Library System</H1>");
+    res.render('index', {
+        title: 'Library App'
+    });
 });
 
 // handle author-management related requests

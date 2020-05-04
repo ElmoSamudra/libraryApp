@@ -1,0 +1,22 @@
+extends default
+
+block content
+
+    div.main
+        form(method='POST' action='/author-management/'+id)
+            div
+                label(for='id') ID:
+                input(type='text', placeholder='id' name='id' id='id' value=id)
+            div
+                label(for='first_name') First Name:
+                input(type='text', placeholder='first name' name='first_name' id='first_name' value=first_name)
+
+            div
+                label(for='last_name') Last Name:
+                input(type='text', placeholder='last name' name='last_name' id='last_name' value=last_name)
+
+            button(type='submit') Update
+
+    </div>
+
+
