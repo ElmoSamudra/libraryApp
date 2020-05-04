@@ -38,6 +38,7 @@ const updateAuthor = async (req, res) => {
     const author = authors[0];
     console.log("Author found!!!", author);
     
+    author["id"] = new_author["id"]
     author["first_name"] = new_author["first_name"];
     author["last_name"] = new_author["last_name"];
     
