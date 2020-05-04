@@ -10,10 +10,7 @@ const getAllAuthors = async (req, res) => {
   try {
     const all_authors = await Author.find();
     
-    res.render('authors', {
-        title: 'Author List',
-        authors: all_authors
-    });
+    res.send(all_authors);
 
   } catch (err) {
     res.status(400);
